@@ -18,7 +18,7 @@ jobs:
       - name: install pylint
         run: |
           python -m pip install --upgrade pip
-          pip install pylint==2.7.2 pyyaml
+          pip install pylint==2.7.2 pymysql
       - name: run pylint
         run: |
           pylint *.py

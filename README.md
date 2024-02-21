@@ -1,3 +1,5 @@
+[![pylint](https://github.com/zerwes/powerdns-pipe-ptr/actions/workflows/pylint.yml/badge.svg)](https://github.com/zerwes/powerdns-pipe-ptr/actions/workflows/pylint.yml)
+
 # powerdns-pipe-ptr
 
 a simple script to be used vai powerdns pipe backend
