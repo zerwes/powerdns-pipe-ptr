@@ -2,7 +2,7 @@
 
 # powerdns-pipe-ptr
 
-a simple script to be used vai powerdns pipe backend
+a simple script to be used via [powerdns](https://github.com/PowerDNS/pdns) pipe backend
 
 it is intended to resolve reverse lookups based on the existing `A` records via the gmysql backend,
 as the `set-ptr` option has been removed (see https://github.com/PowerDNS/pdns/pull/7797)
