@@ -19,7 +19,7 @@ the script will just work for records registered in the `gmysql` backend and use
 
 ### pdns.conf
 
-add the following lines to your `pdns.conf`
+add the following lines to your `pdns.conf` **after** the `launch+=gmysql` line and the other gmysql settings:
 
 ```
 zone-cache-refresh-interval=0
@@ -27,6 +27,9 @@ launch+=pipe
 pipe-regex=^.*\.in-addr\.arpa$
 pipe-command=/etc/powerdns/ptr.py
 ```
+
+inserting the pipe settings **after** the gmysql settings ensures that real PTR records will be resolved via the gmysql (or other) backend,
+and only if none is fpund, the pipe backend will be used.
 
 # ptr.py
 
