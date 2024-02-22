@@ -26,6 +26,7 @@ def _send_resp(msg):
     sys.stdout.flush()
     syslog.syslog(f"send resp {msg}")
 
+# read mysql connection settings from the gmysql settings from /etc/powerdns/pdns.conf
 config = configparser.ConfigParser(strict=False)
 with open("/etc/powerdns/pdns.conf", 'r', encoding="utf-8") as stream:
     config.read_string("[PDNS]\n" + stream.read())
@@ -47,7 +48,7 @@ connection = pymysql.connect(
         cursorclass=pymysql.cursors.DictCursor
     )
 
-"""main program loop"""
+# main program loop
 syslog.syslog("startup ...")
 first_loop = True
 while True:
@@ -73,7 +74,6 @@ while True:
             _send_resp('FAIL')
             sys.exit(2)
         # Q qname       qclass  qtype   id  remote-ip-address
-        # Q 1.20.168.192.in-addr.arpa IN SOA -1 0.0.0.0
         qname = query[1]
         qtype = query[3]
         if qtype == 'SOA':
