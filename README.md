@@ -35,7 +35,7 @@ pipe-command=/etc/powerdns/ptr.py
 inserting the pipe settings **after** the gmysql settings ensures that real PTR records will be resolved via the gmysql (or other) backend,
 and only if none is fpund, the pipe backend will be used.
 
-# ptr.py
+## ptr.py
 
 copy the script to `/etc/powerdns/ptr.py`
 
@@ -52,6 +52,6 @@ unix_socket="/var/run/mysqld/mysqld.sock"
 ```
 as arg to `pymysql.connect`
 
-# restart pdns service
+## restart pdns service
 
 the script will log to syslog
