@@ -42,6 +42,12 @@ chmod 750 /etc/powerdns/ptr.py
 chown root:pdns /etc/powerdns/ptr.py
 ```
 
+in some cases you might need to add
+```
+unix_socket="/var/run/mysqld/mysqld.sock"
+```
+as arg to `pymysql.connect`
+
 # restart pdns service
 
 the script will log to syslog
