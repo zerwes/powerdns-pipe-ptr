@@ -9,6 +9,10 @@ as the `set-ptr` option has been removed (see https://github.com/PowerDNS/pdns/p
 
 ## requirements
 
+### python3 pymysql
+
+the script requires `python3-pymysql` aka. `PyMySQL`
+
 ### SOA
 
 the reverse zones in question should be created in pdns
