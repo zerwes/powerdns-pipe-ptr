@@ -104,5 +104,5 @@ while True:
                     # DATA    qname       qclass  qtype   ttl id  content
                     _send_resp(f"DATA\t{qname}\tIN\tPTR\t{result['ttl']}\t-1\t{result['name']}")
                 else:
-                    _send_resp(f"LOG: no ptr found for {qname} ({ip}")
+                    _send_resp(f"LOG\tno ptr found for {qname} ({ip})")
         _send_resp('END')
